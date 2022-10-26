@@ -37,11 +37,12 @@ public class Main {
         }
 
         System.out.println("Ваша корзина покупок:");
+        int sumBon = 0;
         int sum = 0;
         for (int i = 0; i < products.length; i++) {
-
+            sumBon += prices[i] * counts[i];
         }
-        boolean doBonus = sum >= MIN_COST_FOR_BONUS;
+        boolean doBonus = sumBon >= MIN_COST_FOR_BONUS;
         for (int i = 0; i < products.length; i++) {
             if (counts[i] != 0) {
               //  System.out.println("\t" + products[i] + " " + (doBonus ? counts[i] + 1 : counts[i]) + " шт. за " + (prices[i] * counts[i]) + " руб.");
